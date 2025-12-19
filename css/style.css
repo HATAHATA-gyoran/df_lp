@@ -1,0 +1,615 @@
+:root {
+    --bg0: #071a2d;
+    --bg1: #0b2a4a;
+    --bg-deep: #020a14;
+    --accent: #2bd4e8;
+    --accent-glow: rgba(43, 212, 232, 0.6);
+    --text: #e6f3ff;
+    --muted: #9fb3c8;
+    --card: rgba(255, 255, 255, 0.05);
+    --border: rgba(43, 212, 232, 0.3);
+    --font-heading: 'Orbitron', 'Zen Old Mincho', sans-serif;
+    --font-body: 'Zen Old Mincho', serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg0);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 200vh;
+    /* Allow scrolling for parallax */
+}
+
+/* Background Gradients & Parallax */
+.depth-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: linear-gradient(180deg, var(--bg1) 0%, var(--bg0) 40%, var(--bg-deep) 100%);
+}
+
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        radial-gradient(circle at 10% 30%, rgba(255, 255, 255, 0.05) 2px, transparent 2px);
+    background-size: 200px 200px, 300px 300px;
+    animation: particlesRise 20s linear infinite;
+}
+
+@keyframes particlesRise {
+    from {
+        background-position: 0 0, 0 0;
+    }
+
+    to {
+        background-position: 0 -200px, 0 -300px;
+    }
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    letter-spacing: 0.1em;
+    color: white;
+}
+
+h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px var(--accent-glow);
+}
+
+.jp-sub {
+    font-size: 1rem;
+    color: var(--accent);
+    margin-bottom: 3rem;
+    opacity: 0.8;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navigation */
+.main-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    mix-blend-mode: exclusion;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+.btn-nav {
+    border: 1px solid white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    transition: all 0.3s;
+}
+
+.btn-nav:hover {
+    background: white;
+    color: var(--bg0);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    /* Changed from height: 100vh to allow growth */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    /* Keep hidden for video containment, but allow internal scroll if body grows */
+    padding: 6rem 0;
+    /* Add padding to prevent cut-off on small screens */
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    /* Dim the video slightly */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(7, 26, 45, 0.3) 0%, rgba(7, 26, 45, 0.6) 80%, var(--bg0) 100%);
+}
+
+.hero-title {
+    font-size: clamp(3rem, 10vw, 8rem);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* Vertical Catchphrase */
+.vertical-catchphrase {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    margin: 1rem auto 3rem;
+    /* Reduced margins */
+    font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+    letter-spacing: 0.25em;
+    line-height: 2.5;
+    height: 75vh;
+    /* Increased to allow longer lines */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    text-align: left;
+    filter: drop-shadow(0 0 5px rgba(43, 212, 232, 0.3));
+}
+
+.vertical-catchphrase p {
+    margin-left: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.vertical-catchphrase .catch-main {
+    font-size: 2em;
+    font-weight: 700;
+    color: #fff;
+    margin-left: 3rem;
+    /* Push slightly apart */
+    text-shadow: 0 0 15px var(--accent-glow);
+}
+
+.vertical-catchphrase .final-line {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: var(--accent);
+    margin-left: 2.5rem;
+    margin-top: 1rem;
+    /* Adjust position in flow if needed */
+}
+
+/* Hero Modifications */
+.hero-content {
+    z-index: 10;
+    width: 100%;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Hero Buttons */
+.btn-primary {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 3rem;
+    background: rgba(43, 212, 232, 0.1);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    backdrop-filter: blur(5px);
+}
+
+.btn-primary:hover {
+    background: var(--accent);
+    color: var(--bg0);
+    box-shadow: 0 0 30px var(--accent-glow);
+}
+
+.btn-text {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.btn-sub {
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0.7;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+}
+
+.arrow {
+    width: 20px;
+    height: 20px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(45deg);
+    animation: scrollBounce 2s infinite;
+}
+
+@keyframes scrollBounce {
+
+    0%,
+    100% {
+        transform: rotate(45deg) translate(0, 0);
+    }
+
+    50% {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+}
+
+/* Main Content */
+.section {
+    padding: 6rem 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Trailer Section */
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #000;
+}
+
+/* Section Header Spacing */
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Cards (About) */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-color: var(--accent);
+}
+
+/* Visual Cards */
+.feature-card.visual-card {
+    padding: 0;
+    /* Remove padding to let image fill header if desired, or keep logic */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+    height: 180px;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.pixel-art {
+    image-rendering: pixelated;
+    /* Essential for dot pictures */
+    max-height: 80%;
+    width: auto;
+    filter: drop-shadow(0 0 8px rgba(43, 212, 232, 0.4));
+    transition: transform 0.3s;
+}
+
+.pixel-art.scale-up {
+    transform: scale(4);
+    /* Make small sprites visible */
+}
+
+.pixel-art.wide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.feature-card:hover .pixel-art {
+    transform: scale(1.1);
+}
+
+.feature-card:hover .pixel-art.scale-up {
+    transform: scale(4.5);
+}
+
+.feature-card h3 {
+    padding: 0 1.5rem;
+}
+
+.feature-card p {
+    padding: 0 1.5rem 2rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent);
+}
+
+/* Carousel */
+.carousel-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.carousel-main {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%;
+    /* 16:9 Aspect Ratio */
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: #000;
+}
+
+.carousel-track-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-track {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 0;
+}
+
+.carousel-slide.current-slide {
+    opacity: 1;
+    z-index: 1;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Carousel Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s;
+}
+
+.carousel-btn:hover {
+    background: var(--accent);
+    color: var(--bg0);
+}
+
+.carousel-btn.prev {
+    left: 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.carousel-btn.next {
+    right: 0;
+    border-radius: 8px 0 0 8px;
+}
+
+/* Carousel Nav indicators */
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    gap: 0.8rem;
+}
+
+.carousel-indicator {
+    border: 0;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.carousel-indicator.current-indicator {
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
+/* CTA & Footer */
+.cta-section {
+    text-align: center;
+    padding: 8rem 1.5rem;
+    background: linear-gradient(0deg, #000 0%, transparent 100%);
+}
+
+.cta-section h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.cta-section .btn-primary {
+    margin-top: 2rem;
+}
+
+.main-footer {
+    padding: 3rem 1.5rem;
+    text-align: center;
+    background: black;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.footer-logo {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.ai-disclosure {
+    font-size: 0.8rem;
+    color: var(--muted);
+    opacity: 0.7;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        /* Simple fallback for now */
+    }
+
+    .logo {
+        margin: 0 auto;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+        /* Small fix */
+    }
+}

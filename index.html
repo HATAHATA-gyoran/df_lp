@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Fisher - 深海シューティング×釣り</title>
+    <meta name="description" content="ゲームオーバーにならないシューティング×釣りゲーム『Deep Fisher』体験版公開中。深海へ潜り、未知の魚を釣り上げろ。">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Russo+One&family=Zen+Old+Mincho:wght@400;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Favicon (using existing game assets if available or generic) -->
+    <!-- <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" /> -->
+</head>
+
+<body>
+
+    <!-- Background Elements -->
+    <div class="depth-background"></div>
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="logo">DEEP FISHER</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#gallery">Gallery</a>
+            <a href="df_p/index.html" class="btn-nav">Play Demo</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="video-background">
+            <video autoplay muted loop playsinline poster="assets/screenshots/1.png">
+                <source src="assets/video/pv_1.mp4" type="video/mp4">
+            </video>
+            <div class="overlay"></div>
+        </div>
+
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="glitch" data-text="DEEP FISHER">DEEP FISHER</span>
+            </h1>
+            <div class="vertical-catchphrase">
+                <p class="catch-main">│深海に降りる。</p>
+                <p>人間って宇宙のことより海のことのほうがわかってないんだって。</p>
+                <p>それってすごいことじゃないか。</p>
+                <p>そこには未知の、しかし確実に存在する生物がいる。</p>
+                <p>「DeepFisher」はそのためにある。</p>
+                <p class="final-line">さぁ人間の空想を超えてゆけ。</p>
+            </div>
+
+            <div class="hero-actions">
+                <a href="#trailer" class="btn-primary glitch-btn">
+                    <span class="btn-text">WATCH TRAILER</span>
+                </a>
+                <a href="df_p/index.html" class="btn-primary glitch-btn accent">
+                    <span class="btn-text">DIVE INTO THE DEEP</span>
+                    <span class="btn-sub">今すぐ体験版をプレイ</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Trailer Section -->
+        <section id="trailer" class="section trailer-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>TRAILER</h2>
+                    <p class="jp-sub">プロモーション映像</p>
+                </div>
+                <div class="video-container">
+                    <video controls poster="assets/screenshots/1.png">
+                        <source src="assets/video/pv_1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>SYSTEM</h2>
+                    <p class="jp-sub">ゲームシステム</p>
+                </div>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>Deep Sea Fishing</h3>
+                        <p>簡単操作で針を垂らし、深海の魚たちを釣り上げろ。深度によって変わる生態系。</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Shooting Action</h3>
+                        <p>ゲームオーバーのないシューティング。避けて、加速して、新しい魚を釣っていけ。</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Chill Atmosphere</h3>
+                        <p>アクアリウムには釣った魚が生きています。ゆっくりと静かに観察できる図鑑機能。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="section gallery-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>GALLERY</h2>
+                    <p class="jp-sub">スクリーンショット</p>
+                </div>
+
+                <div class="carousel-container">
+                    <div class="carousel-main">
+                        <button class="carousel-btn prev" aria-label="Previous Image">❮</button>
+                        <div class="carousel-track-container">
+                            <ul class="carousel-track">
+                                <li class="carousel-slide current-slide">
+                                    <img src="assets/screenshots/1.png" alt="Title Screen">
+                                </li>
+                                <li class="carousel-slide">
+                                    <img src="assets/screenshots/2.png" alt="Fishing Scene">
+                                </li>
+                                <li class="carousel-slide">
+                                    <img src="assets/screenshots/3.png" alt="Deep Sea Encounter">
+                                </li>
+                                <li class="carousel-slide">
+                                    <img src="assets/screenshots/4.png" alt="Aquarium">
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="carousel-btn next" aria-label="Next Image">❯</button>
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="carousel-indicator current-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section cta-section">
+            <div class="container">
+                <h2>Are You Ready?</h2>
+                <p>深淵があなたを待っている</p>
+                <a href="df_p/index.html" class="btn-primary large">
+                    PLAY DEMO
+                </a>
+                <p class="note">※ブラウザですぐに遊べます</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-logo">DEEP FISHER</div>
+            <p class="ai-disclosure">※本ゲームの画像・音声等の素材は生成AIを使用して制作されています。</p>
+            <p class="copyright">&copy; 2025 Deep Fisher Project. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
