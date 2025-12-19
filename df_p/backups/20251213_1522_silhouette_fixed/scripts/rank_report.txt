@@ -1,0 +1,4 @@
+Total fish defined: 110
+Rank range: 1 to 105
+No missing ranks found.
+Found duplicate ranks: [1, 1, 2, 89, 90]

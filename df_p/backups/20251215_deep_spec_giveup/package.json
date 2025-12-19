@@ -1,0 +1,17 @@
+{
+  "name": "deepfisher",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Deep Fisher - itch.io向けHTML5ゲーム（タイトル/釣り/アクアリウム ひな型）",
+  "scripts": {
+    "start": "serve -l 5173 .",
+    "img:convert": "node scripts/convert-images.mjs"
+  },
+  "devDependencies": {
+    "serve": "^14.2.3",
+    "sharp": "^0.33.4"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

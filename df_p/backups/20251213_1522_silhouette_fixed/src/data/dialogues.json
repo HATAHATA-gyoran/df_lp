@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "events": {
+    "bait_unknown_tap": {
+      "lines": [
+        "おや、そんなエサは存在しないぜ",
+        "釣り上げた人だけの特権だ"
+      ],
+      "sfx": {
+        "file": "assets/katakata.wav",
+        "playMode": "perLine"
+      },
+      "typing": {
+        "charIntervalMs": 90,
+        "afterLinePauseMs": 300
+      },
+      "ui": {
+        "position": "bottom"
+      }
+    },
+    "bait_kraken_tap": {
+      "lines": [
+        "おや、そんなエサは存在しないぜ",
+        "イカした夢でも見てたんじゃないか"
+      ],
+      "sfx": {
+        "file": "assets/katakata.wav",
+        "playMode": "perLine"
+      },
+      "typing": {
+        "charIntervalMs": 90,
+        "afterLinePauseMs": 300
+      },
+      "ui": {
+        "position": "bottom"
+      }
+    }
+  }
+}

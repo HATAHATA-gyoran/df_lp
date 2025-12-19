@@ -1,0 +1,28 @@
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+/assets/fishes/*
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+/assets/*.mp3
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+/assets/*.mp4
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+/assets/*.mkv
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+/styles/*
+  Cache-Control: public, max-age=604800
+
+/src/*.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+/src/data/*.json
+  Cache-Control: public, max-age=0, must-revalidate

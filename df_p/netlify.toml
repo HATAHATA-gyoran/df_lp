@@ -1,0 +1,8 @@
+[build]
+  publish = "."
+
+# JSONは毎回最新を取得したいのでCDNキャッシュを無効化
+[[headers]]
+  for = "/src/data/*"
+  [headers.values]
+    Cache-Control = "no-store, no-cache, must-revalidate, max-age=0"

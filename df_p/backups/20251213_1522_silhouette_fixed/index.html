@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="ゲームオーバーにならないシューティング×釣りゲーム『Deep Fisher』" />
+  <meta name="theme-color" content="#0b2a4a" />
+  <title>Deep Fisher</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Russo+One&family=Zen+Old+Mincho:wght@400;700;900&display=swap"
+    rel="stylesheet">
+  <link rel="preload" as="image" href="assets/title5.webp" />
+  <link rel="preload" as="image" href="assets/frame1.webp" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <!-- Phaser 3 CDN - v2 -->
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.70.0/dist/phaser.min.js"></script>
+</head>
+
+<body>
+  <div id="app" class="app-root"></div>
+  <noscript>このゲームを遊ぶにはJavaScriptを有効にしてください。</noscript>
+  <script type="module" src="src/patches/speedDecayPatch.js"></script>
+  <script type="module" src="src/patches/spawnBoostPatch.js"></script>
+  <script type="module" src="src/patches/speciesBehaviorsPatch.js"></script>
+  <script type="module" src="src/main.js"></script>
+</body>
+
+</html>

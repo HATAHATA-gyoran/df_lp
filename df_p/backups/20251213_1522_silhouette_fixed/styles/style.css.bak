@@ -1,0 +1,807 @@
+:root {
+  --bg0: #071a2d;
+  --bg1: #0b2a4a;
+  --accent: #2bd4e8;
+  --text: #e6f3ff;
+  --muted: #9fb3c8;
+  --card: rgba(255, 255, 255, .06);
+  --border: rgba(255, 255, 255, .12);
+  --btn: #103555;
+  --btnH: #1a4a77;
+  --frame-h: clamp(24px, 5vw, 80px);
+  --title-btn-offset-x: 0px
+}
+
+* {
+  box-sizing: border-box
+}
+
+html,
+body {
+  height: 100%
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: linear-gradient(180deg, var(--bg0), var(--bg1));
+  color: var(--text);
+  font-family: Segoe UI, system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif
+}
+
+/* デジタル数字フォント（深度メーター用） */
+@font-face {
+  font-family: 'DSEG14ModernBold';
+  src: url('../assets/font/DSEG14Modern-Bold.ttf') format('truetype');
+  font-display: swap;
+}
+
+.app-root {
+  width: 100%;
+  max-width: 1000px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+  padding: 28px
+}
+
+/* タイトルシーン時にフルスクリーン化（枠を消し、全画面でフレーム＆背景を表示） */
+body.title-full,
+body.frame-full {
+  padding: 0;
+  overflow: hidden
+}
+
+body.title-full .app-root,
+body.frame-full .app-root {
+  max-width: none;
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  overflow: hidden
+}
+
+.scene {
+  width: 100%
+}
+
+.scene--title {
+  text-align: center
+}
+
+.h1,
+.h2,
+h1,
+h2 {
+  line-height: 1.2;
+  margin: 0 0 12px
+}
+
+p {
+  color: var(--muted);
+  margin: 0 0 16px
+}
+
+.btn-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center
+}
+
+.btn {
+  appearance: none;
+  border: none;
+  background: var(--btn);
+  color: var(--text);
+  padding: 12px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: .3px;
+  border: 1px solid var(--border);
+  transition: background .15s, transform .05s
+}
+
+.btn:hover {
+  background: var(--btnH)
+}
+
+.btn:active {
+  transform: translateY(1px)
+}
+
+.btn-primary {
+  background: linear-gradient(180deg, #23c6e0, #18a9c1);
+  color: #04232e;
+  border: 0
+}
+
+.footer-note {
+  margin-top: 18px;
+  font-size: 12px;
+  color: var(--muted)
+}
+
+.topbar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px
+}
+
+.topbar .left,
+.topbar .right {
+  display: flex;
+  gap: 10px;
+  align-items: center
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px
+}
+
+.canvas-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: transparent
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 12px
+}
+
+.item {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, .04)
+}
+
+.small {
+  font-size: 12px;
+  color: var(--muted)
+}
+
+/* タイトル画像 */
+.title-hero {
+  display: block;
+  width: 100%;
+  max-width: 820px;
+  height: auto;
+  margin: 0 auto 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+/* タイトル画面レイヤー構造 */
+.title-layer {
+  position: relative;
+  padding-block: 0;
+  min-height: 100vh
+}
+
+.title-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image: image-set(url('../assets/title5.webp') type('image/webp') 1x, url('../assets/title5.png') type('image/png') 1x);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: saturate(1) contrast(1.05)
+}
+
+/* 16:9のセーフエリア。常に中央表示され、ここに重要UIを配置 */
+.safe-viewport {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-width: 920px;
+  max-width: 920px;
+  margin: 0 auto;
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.title-ui {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative
+}
+
+.title-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  position: absolute;
+  left: calc(50% + var(--title-btn-offset-x));
+  transform: translateX(-50%);
+  bottom: clamp(6px, 2vh, 24px)
+}
+
+/* タイトル主要ボタン(START/CONTINUE/CONFIG)を1.2倍 */
+.scene--title .title-buttons .img-btn img {
+  width: clamp(192px, 24vw, 336px)
+}
+
+/* 前面フレーム（横方向のみ）。あとでスキン切替可能なようにクラス化 */
+.frame {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  pointer-events: none
+}
+
+.frame-top {
+  top: 0;
+  height: var(--frame-top, var(--frame-h));
+  background: image-set(url('../assets/frame1.webp') type('image/webp') 1x, url('../assets/frame1.png') type('image/png') 1x) center top/cover no-repeat
+}
+
+.frame-bottom {
+  bottom: 0;
+  height: var(--frame-bottom, var(--frame-h));
+  background: image-set(url('../assets/frame1.webp') type('image/webp') 1x, url('../assets/frame1.png') type('image/png') 1x) center bottom/cover no-repeat
+}
+
+/* 旧: 単一オーバーレイは未使用だが将来のマスク対応で残置 */
+.frame-overlay {
+  display: none
+}
+
+/* SVGマスクを載せるホスト（フレーム全面オーバーレイ） */
+.frame-svg {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none
+}
+
+/* 釣りシーン: 動画背景レイヤー */
+.fish-layer {
+  position: relative;
+  min-height: 100vh
+}
+
+.scene--fishing {
+  overflow: hidden
+}
+
+.scene--fishing .fish-layer {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.fish-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  background: #000
+}
+
+.fish-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  background: #000
+}
+
+.video-backdrop {
+  position: absolute;
+  inset: 0;
+  background-image: image-set(url('../assets/game_start_2.webp') type('image/webp') 1x, url('../assets/game_start_2.png') type('image/png') 1x);
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+  background-position: center top
+}
+
+/* コンフィグシーン: レイヤー定義（フレームの基準に） */
+.cfg-layer {
+  position: relative;
+  min-height: 100vh
+}
+
+/* スキンの例（今はデフォルトのみ）。今後実績解除で class を切替予定 */
+.frame-skin-default .frame-top,
+.frame-skin-default .frame-bottom {
+  backdrop-filter: blur(1px)
+}
+
+/* 画像ボタン */
+.img-btn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, .35));
+  transition: transform .06s ease, filter .15s ease;
+}
+
+.img-btn img {
+  display: block;
+  width: clamp(160px, 20vw, 280px);
+  height: auto;
+  border-radius: 10px
+}
+
+.img-btn:hover {
+  transform: translateY(-1px);
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, .45))
+}
+
+.img-btn:active {
+  transform: translateY(0)
+}
+
+.img-btn[disabled] {
+  cursor: not-allowed;
+  filter: grayscale(1) opacity(.6)
+}
+
+/* 小型ボタン（RESET用） */
+.img-btn--sm img {
+  width: clamp(120px, 14vw, 200px)
+}
+
+/* モーダル（ゲーム内確認タブ） */
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, .55)
+}
+
+.modal {
+  min-width: min(560px, 92vw);
+  max-width: 92vw;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, .45);
+  padding: 16px
+}
+
+.modal-body {
+  padding: 4px 4px 12px
+}
+
+.modal-title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 6px
+}
+
+.modal-text {
+  color: var(--text)
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end
+}
+
+.btn-danger {
+  background: linear-gradient(180deg, #e05252, #bb2e2e);
+  color: #fff;
+  border: 0
+}
+
+.btn-danger:hover {
+  filter: brightness(1.06)
+}
+
+/* 釣り画面: タイトルへ戻るボタン（フレーム内の左上） */
+.scene--fishing .fish-topbar {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  z-index: 10;
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  justify-content: flex-start;
+  pointer-events: auto;
+  overflow: visible
+}
+
+/* sunset overlay removed */
+/* トップセットとゲームHUDを左右分割（左:深度、右:餌箱） */
+.scene--fishing .fish-topbar .topset,
+.scene--fishing .fish-topbar .gamehud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 4px
+}
+
+.scene--fishing .fish-topbar .right-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: -56px
+}
+
+/* 画像合成の戻るボタン（矢印+yajirushi上にTITLE） */
+.img-combo-btn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, .35));
+  transition: transform .06s ease, filter .15s ease
+}
+
+.img-combo-btn:hover {
+  transform: translateY(-1px);
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, .45))
+}
+
+.img-combo-btn:active {
+  transform: translateY(0)
+}
+
+.img-combo-btn .back-arrow {
+  display: block;
+  width: clamp(120px, 22vw, 280px);
+  height: auto
+}
+
+.img-combo-btn .back-title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: auto;
+  pointer-events: none
+}
+
+.img-combo-btn--sm .back-arrow {
+  width: clamp(58px, 11vw, 128px)
+}
+
+.img-combo-btn--sm .back-title {
+  width: 56%
+}
+
+/* 水深メーター */
+.depth-group {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  transform-origin: left top
+}
+
+.depth {
+  position: relative;
+  display: inline-block
+}
+
+.depth .depth-bg {
+  display: block;
+  width: clamp(88px, 15vw, 160px);
+  height: auto
+}
+
+.depth .depth-text {
+  position: absolute;
+  left: calc(50% - 5px);
+  top: calc(50% - 3px);
+  transform: translate(-50%, -52%);
+  font-family: 'DSEG14ModernBold', monospace;
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: #fff;
+  text-shadow: 0 0 8px rgba(0, 0, 0, .6);
+  font-size: clamp(7.6px, 1.71vw, 15.2px)
+}
+
+/* トップセット（TITLE/現在/最大/餌箱ミニ）の入場アニメ */
+.topset-item {
+  opacity: 0;
+  transform: translateY(-140%) scale(.98)
+}
+
+.topset-item.enter {
+  animation: topset-pop .5s cubic-bezier(.2, .9, .2, 1) both;
+  opacity: 1;
+  transform: translateY(0)
+}
+
+@keyframes topset-pop {
+  0% {
+    transform: translateY(-120%) scale(.98);
+    opacity: 0
+  }
+
+  60% {
+    transform: translateY(6%);
+    opacity: 1
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1
+  }
+}
+
+/* 退出（上へ引き上げ） */
+.topset-item.exit {
+  animation: topset-up .38s cubic-bezier(.2, .9, .2, 1) both
+}
+
+@keyframes topset-up {
+  from {
+    transform: translateY(0);
+    opacity: 1
+  }
+
+  to {
+    transform: translateY(-140%) scale(.98);
+    opacity: 0
+  }
+}
+
+/* トップバー内の餌箱ミニ */
+.esabako-mini {
+  position: relative;
+  display: inline-block
+}
+
+.esabako-mini.enter {
+  animation: df-pop-down .5s cubic-bezier(.2, .9, .2, 1) both
+}
+
+.esabako-mini-wrap {
+  position: relative;
+  width: clamp(145px, 21.8vw, 292px)
+}
+
+.esabako-img-mini {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, .35))
+}
+
+.ebi-img-mini {
+  position: absolute;
+  bottom: calc(100% - 82%);
+  right: 18%;
+  width: clamp(37.4px, 8.03vw, 84.7px);
+  height: auto;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, .35));
+  transform: translate(-30px, -20px)
+}
+
+/* タイトル画面: アクアリウムボタンを右上（フレーム内=セーフエリア内）に配置 */
+.scene--title .title-aqua {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 6
+}
+
+/* タイトル画面: リセットボタンを左上（フレーム内=セーフエリア内）に配置 */
+.scene--title .title-reset {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 6
+}
+
+/* --- 釣り画面の演出レイヤー --- */
+/* バブル（ドット） - 黒フェードの上に表示 */
+.bubble-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  image-rendering: pixelated
+}
+
+/* 黒フェード */
+.fade-overlay {
+  position: absolute;
+  inset: 0;
+  background: #000;
+  opacity: 0;
+  transition: opacity .6s ease;
+  z-index: 4;
+  pointer-events: none
+}
+
+/* 餌スプライト（セーフエリア中央に出す） */
+.bait-sprite {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(var(--bait-scale, .4));
+  display: none;
+  z-index: 6;
+  width: clamp(48px, 10vw, 120px);
+  height: auto;
+  pointer-events: none
+}
+
+.bait-sprite .bait-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated
+}
+
+.bait-sprite .bait-plus {
+  position: absolute;
+  left: 50%;
+  top: calc(50% - 5px);
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: auto;
+  image-rendering: pixelated;
+  pointer-events: none
+}
+
+/* 餌の発光（ランプ系の柔らかい光） */
+.bait-sprite.glow .bait-img {
+  animation: baitGlow 2.2s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 180, .55)) drop-shadow(0 0 14px rgba(255, 255, 200, .4))
+}
+
+@keyframes baitGlow {
+  from {
+    filter: drop-shadow(0 0 6px rgba(255, 255, 180, .55)) drop-shadow(0 0 14px rgba(255, 255, 200, .4))
+  }
+
+  to {
+    filter: drop-shadow(0 0 16px rgba(255, 255, 180, .95)) drop-shadow(0 0 28px rgba(255, 255, 200, .65))
+  }
+}
+
+/* 魚シルエット（全魚共通のfish.png） */
+.fish-sprite {
+  position: absolute;
+  z-index: 3;
+  image-rendering: pixelated;
+  pointer-events: none
+}
+
+/* 当たり判定デバッグ（シーンルートに .debug-colliders が付いた時だけ可視化） */
+.debug-colliders .bait-sprite {
+  outline: 2px dashed rgba(255, 80, 80, .9);
+  outline-offset: 0
+}
+
+.debug-colliders .fish-sprite {
+  outline: 2px dashed rgba(80, 255, 120, .9);
+  outline-offset: 0
+}
+
+/* スクロール背景（ゲーム画面） */
+.game-scroll {
+  position: absolute;
+  inset: 0;
+  display: none;
+  background-image: image-set(url('../assets/game_start_2.webp') type('image/webp') 1x, url('../assets/game_start_2.png') type('image/png') 1x);
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+  background-position: center 0;
+  z-index: 1;
+  image-rendering: pixelated;
+  animation: df-scroll-up 8s linear infinite
+}
+
+/* ゲーム画面・黒の画像背景（データURI） */
+.game-bg-black {
+  position: absolute;
+  inset: 0;
+  display: none;
+  z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='2' height='2'><rect width='100%' height='100%' fill='%23000'/></svg>");
+  top: calc(clamp(4px, 1.5vw, 12px) - 50px);
+  transform: translateY(-140%);
+  z-index: 7;
+  pointer-events: none
+}
+
+.esabako-group.enter {
+  animation: df-pop-down .6s cubic-bezier(.2, .9, .2, 1) both
+}
+
+.esabako-group .esabako-img {
+  display: block;
+  width: clamp(173px, 25.2vw, 396px);
+  height: auto;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, .35))
+}
+
+.esabako-group .ebi-img {
+  position: absolute;
+  bottom: calc(100% - 155px);
+  right: 100px;
+  width: clamp(37.4px, 7.7vw, 123.2px);
+  height: auto;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, .35));
+  transform: translate(-30px, -20px)
+}
+
+@keyframes df-pop-down {
+  0% {
+    transform: translateY(-140%) scale(.98);
+    opacity: 0
+  }
+
+  60% {
+    transform: translateY(6%);
+    opacity: 1
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1
+  }
+}
+
+/* 浮き（シンプルな小円） */
+.float-bob {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: clamp(10px, 2.6vw, 24px);
+  height: clamp(10px, 2.6vw, 24px);
+  border-radius: 999px;
+  background: radial-gradient(circle at 35% 35%, #fffc, #f55a);
+  box-shadow: 0 0 8px rgba(0, 0, 0, .35), 0 0 6px rgba(255, 255, 255, .35) inset;
+  z-index: 6;
+  pointer-events: none
+}

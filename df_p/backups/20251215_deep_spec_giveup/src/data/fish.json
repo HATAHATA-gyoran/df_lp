@@ -1,0 +1,1745 @@
+﻿{
+  "baitTypes": [
+    {
+      "id": "ebi",
+      "name_ja": "エビ",
+      "rank": 0,
+      "sprite": "assets/taiwoturuebi.png"
+    }
+  ],
+  "fish": [
+    {
+      "id": "kabutogani",
+      "name_ja": "カブトガニ",
+      "rank": 1,
+      "sprite": "assets/fishes/kabutogani.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 60,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.0,
+        "patrolX": true,
+        "patrolSpeed": 24
+      }
+    },
+    {
+      "id": "sayori",
+      "name_ja": "サヨリ",
+      "rank": 10,
+      "sprite": "assets/fishes/sayori.png",
+      "movement": {
+        "pattern": "sine",
+        "speed": 50,
+        "amplitude": 15,
+        "frequency": 0.5,
+        "sizeScale": 0.75,
+        "sampleSeekBait": false,
+        "seekIntervalMs": 600,
+        "seekSpeed": 22
+      }
+    },
+    {
+      "id": "shakogai",
+      "name_ja": "シャコガイ",
+      "rank": 3,
+      "specialRank": "f30",
+      "sprite": "assets/fishes/shakogai.png",
+      "spawnChance": 0.35,
+      "movement": {
+        "pattern": "drift",
+        "speed": 18,
+        "amplitude": 4,
+        "frequency": 0.2,
+        "sizeScale": 1.1,
+        "growToScale": 1.6,
+        "growDurationMs": 3500
+      }
+    },
+    {
+      "id": "tatsunootoshigo",
+      "name_ja": "タツノオトシゴ",
+      "rank": 4,
+      "sprite": "assets/fishes/tatsunootoshigo.png",
+      "movement": {
+        "pattern": "drift",
+        "speed": 12,
+        "amplitude": 10,
+        "frequency": 0.5,
+        "sizeScale": 0.8,
+        "avoidFromBaitX": true,
+        "avoidSpeed": 140,
+        "avoidDurationMs": 1600,
+        "avoidRangePx": 120,
+        "patrolX": true,
+        "patrolSpeed": 80,
+        "allowOffscreenX": true,
+        "despawnOffX": 140
+      }
+    },
+    {
+      "id": "datsu",
+      "name_ja": "ダツ",
+      "rank": 5,
+      "sprite": "assets/fishes/datsu.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 96,
+        "amplitude": 2,
+        "frequency": 0.2,
+        "sizeScale": 1.0,
+        "rushToBaitX": true,
+        "rushHoming": false,
+        "rushSpeed": 90,
+        "rushDurationMs": 0,
+        "rushUntilOffscreen": true
+      }
+    },
+    {
+      "id": "iseebi",
+      "name_ja": "イセエビ",
+      "rank": 6,
+      "sprite": "assets/fishes/iseebi.png",
+      "movement": {
+        "pattern": "drift",
+        "speed": 20,
+        "amplitude": 6,
+        "frequency": 0.3,
+        "sizeScale": 1.0,
+        "dartEnabled": true,
+        "dartSpeed": 220,
+        "dartDurationMs": 180,
+        "dartReturn": true,
+        "dartReturnFrac": 0.5,
+        "dartReturnMs": 140,
+        "dartIntervalMinMs": 320,
+        "dartIntervalMaxMs": 680
+      }
+    },
+    {
+      "id": "utsubo",
+      "name_ja": "ウツボ",
+      "rank": 7,
+      "sprite": "assets/fishes/utsubo.png",
+      "movement": {
+        "pattern": "sine",
+        "speed": 35,
+        "amplitude": 14,
+        "frequency": 0.6,
+        "sizeScale": 1.1,
+        "chaseBaitInRange": true,
+        "chaseRangePx": 160,
+        "chaseSpeed": 170
+      }
+    },
+    {
+      "id": "umeiro",
+      "name_ja": "ウメイロ",
+      "rank": 8,
+      "sprite": "assets/fishes/umeiro.png",
+      "movement": {
+        "pattern": "sine",
+        "speed": 55,
+        "amplitude": 10,
+        "frequency": 0.7,
+        "sizeScale": 0.95,
+        "circleMove": true,
+        "circleRadius": 48,
+        "circleOmega": 1.2,
+        "ellipseXScale": 1,
+        "ellipseYScale": 1
+      }
+    },
+    {
+      "id": "ojisan",
+      "name_ja": "オジサン",
+      "rank": 9,
+      "sprite": "assets/fishes/ojisan.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 50,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.0,
+        "waveX": true,
+        "waveXAmplitude": 130,
+        "waveXFrequencyHz": 0.6
+      }
+    },
+    {
+      "id": "kawahagi",
+      "name_ja": "カワハギ",
+      "rank": 2,
+      "sprite": "assets/fishes/kawahagi.png",
+      "movement": {
+        "pattern": "sine",
+        "speed": 45,
+        "amplitude": 8,
+        "frequency": 0.6,
+        "sizeScale": 0.95,
+        "sampleSeekBait": true,
+        "seekIntervalMs": 700,
+        "seekSpeed": 120
+      }
+    },
+    {
+      "id": "shirogisu",
+      "name_ja": "シロギス",
+      "rank": 11,
+      "sprite": "assets/fishes/shirogisu.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 70,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 0.9,
+        "randomStraight": true,
+        "randomStraightSpeed": 180
+      }
+    },
+    {
+      "id": "suzuki",
+      "name_ja": "スズキ",
+      "rank": 12,
+      "sprite": "assets/fishes/suzuki.png",
+      "movement": {
+        "pattern": "sine",
+        "speed": 60,
+        "amplitude": 12,
+        "frequency": 0.5,
+        "sizeScale": 1.35,
+        "circleMove": true,
+        "circleRadius": 64,
+        "circleOmega": 1.4,
+        "ellipseXScale": 1.8,
+        "ellipseYScale": 0.6
+      }
+    },
+    {
+      "id": "dangouo",
+      "name_ja": "ダンゴウオ",
+      "rank": 13,
+      "sprite": "assets/fishes/dangouo.png",
+      "movement": {
+        "pattern": "drift",
+        "speed": 10,
+        "amplitude": 12,
+        "frequency": 0.7,
+        "sizeScale": 0.7,
+        "seekNearestFish": true,
+        "seekOtherSpeed": 90,
+        "seekAttachRadiusPx": 12
+      }
+    },
+    {
+      "id": "tsukihigai",
+      "name_ja": "ツキヒガイ",
+      "rank": 14,
+      "sprite": "assets/fishes/tsukihigai.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 35,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.0,
+        "blinkTeleport": true,
+        "blinkCount": 3,
+        "blinkIntervalMs": 180,
+        "blinkCooldownMs": 1600
+      }
+    },
+    {
+      "id": "hakkaku",
+      "name_ja": "ハッカク",
+      "rank": 15,
+      "sprite": "assets/fishes/hakkaku.png",
+      "spawnChance": 0.2,
+      "movement": {
+        "pattern": "straight",
+        "speed": 60,
+        "amplitude": 2,
+        "frequency": 0.2,
+        "sizeScale": 1.0,
+        "rushToBaitX": true,
+        "rushHoming": false,
+        "rushSpeed": 420,
+        "rushDurationMs": 0,
+        "rushUntilOffscreen": true
+      }
+    },
+    {
+      "id": "hanahigeutsubo",
+      "name_ja": "ハナヒゲウツボ",
+      "rank": 16,
+      "specialRank": "f30",
+      "sprite": "assets/fishes/hanahigeutsubo.png",
+      "movement": {
+        "pattern": "sine",
+        "speed": 35,
+        "amplitude": 16,
+        "frequency": 0.5,
+        "sizeScale": 1.1,
+        "doubleOrbit": true,
+        "orbitR1": 36,
+        "orbitW1": 1.0,
+        "orbitR2": 14,
+        "orbitW2": 2.2
+      }
+    },
+    {
+      "id": "hirame",
+      "name_ja": "ヒラメ",
+      "rank": 17,
+      "sprite": "assets/fishes/hirame.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 45,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.2,
+        "opacity": 0.4,
+        "chaseBaitInRange": true,
+        "chaseRangePx": 160,
+        "chaseSpeed": 240,
+        "hitboxAspect": 2.0,
+        "hitboxScale": 1.1
+      }
+    },
+    {
+      "id": "magochi",
+      "name_ja": "マゴチ",
+      "rank": 18,
+      "sprite": "assets/fishes/magochi.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 40,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.2,
+        "sampleSeekBait": true,
+        "seekIntervalMs": 500,
+        "seekSpeed": 170
+      }
+    },
+    {
+      "id": "matsukasauo",
+      "name_ja": "マツカサウオ",
+      "rank": 19,
+      "sprite": "assets/fishes/matsukasauo.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 18,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 0.9,
+        "randomStraight": true,
+        "randomStraightSpeed": 160,
+        "reflectOnFishHit": true
+      }
+    },
+    {
+      "id": "iidako",
+      "name_ja": "イイダコ",
+      "rank": 20,
+      "sprite": "assets/fishes/iidako.png",
+      "movement": {
+        "pattern": "sine",
+        "speed": 55,
+        "amplitude": 0,
+        "frequency": 0.6,
+        "sizeScale": 0.8,
+        "circleMove": true,
+        "circleRadius": 160,
+        "circleOmega": 0.6,
+        "ellipseXScale": 1.3,
+        "ellipseYScale": 1
+      }
+    },
+    {
+      "id": "madako",
+      "name_ja": "マダコ",
+      "rank": 21,
+      "sprite": "assets/fishes/madako.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 50,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.1,
+        "patrolX": true,
+        "patrolSpeed": 90,
+        "pulsate": true,
+        "pulsateAmp": 0.45,
+        "pulsateHz": 0.5
+      }
+    },
+    {
+      "id": "benimanjukurage",
+      "name_ja": "ベニマンジュウクラゲ",
+      "rank": 72,
+      "sprite": "assets/fishes/benimanjukurage.png",
+      "movement": {
+        "pattern": "drift",
+        "speed": 10,
+        "amplitude": 18,
+        "frequency": 0.5,
+        "sizeScale": 1.0
+      }
+    },
+    {
+      "id": "daariaisoginchaku",
+      "name_ja": "ダーリアイソギンチャク",
+      "rank": 23,
+      "sprite": "assets/fishes/daariaisoginchaku.png",
+      "movement": {
+        "pattern": "drift",
+        "speed": 8,
+        "amplitude": 20,
+        "frequency": 0.4,
+        "sizeScale": 1.0,
+        "growToScale": 1.6,
+        "growDurationMs": 3500
+      }
+    },
+    {
+      "id": "maaji",
+      "name_ja": "マアジ",
+      "rank": 1,
+      "sprite": "assets/fishes/aji.png",
+      "movement": {
+        "pattern": "rise",
+        "speed": 70,
+        "amplitude": 8,
+        "frequency": 0.7,
+        "sizeScale": 0.9,
+        "patrolX": true,
+        "patrolSpeed": 90
+      }
+    },
+    {
+      "id": "maiwashi",
+      "name_ja": "マイワシ",
+      "rank": 1,
+      "sprite": "assets/fishes/iwashi.png",
+      "movement": {
+        "pattern": "sine",
+        "speed": 75,
+        "amplitude": 8,
+        "frequency": 0.7,
+        "sizeScale": 0.9
+      }
+    },
+    {
+      "id": "masaba",
+      "name_ja": "マサバ",
+      "rank": 2,
+      "sprite": "assets/fishes/saba.png",
+      "movement": {
+        "pattern": "sine",
+        "speed": 80,
+        "amplitude": 10,
+        "frequency": 0.7,
+        "sizeScale": 1.0
+      }
+    },
+    {
+      "id": "takanohadai",
+      "name_ja": "タカノハダイ",
+      "rank": 24,
+      "sprite": "assets/fishes/takanohadai.png",
+      "movement": {
+        "polyMove": true,
+        "polySides": 3,
+        "polyR": 60,
+        "polySpeed": 70,
+        "pattern": "sine",
+        "speed": 70,
+        "amplitude": 8,
+        "frequency": 0.7,
+        "sizeScale": 1.0
+      }
+    },
+    {
+      "id": "ishigakidai",
+      "name_ja": "イシガキダイ",
+      "rank": 25,
+      "sprite": "assets/fishes/ishigakidai.png",
+      "movement": {
+        "polyMove": true,
+        "polySides": 5,
+        "polyR": 60,
+        "polySpeed": 75,
+        "pattern": "sine",
+        "speed": 75,
+        "amplitude": 8,
+        "frequency": 0.7,
+        "sizeScale": 1.0
+      }
+    },
+    {
+      "id": "nihonunagi",
+      "name_ja": "ニホンウナギ",
+      "rank": 26,
+      "specialRank": "f50",
+      "sprite": "assets/fishes/nihonunagi.png",
+      "movement": {
+        "pattern": "sine",
+        "speed": 80,
+        "amplitude": 10,
+        "frequency": 0.6,
+        "sizeScale": 1.1
+      }
+    },
+    {
+      "id": "madai",
+      "name_ja": "マダイ",
+      "rank": 27,
+      "specialRank": "f30",
+      "sprite": "assets/fishes/tai.png",
+      "movement": {
+        "pattern": "drift",
+        "speed": 50,
+        "amplitude": 10,
+        "frequency": 0.5,
+        "sizeScale": 1.4,
+        "avoidFromBaitX": true,
+        "avoidSpeed": 140,
+        "avoidDurationMs": 1600,
+        "avoidRangePx": 120,
+        "patrolX": true,
+        "patrolSpeed": 80,
+        "allowOffscreenX": true,
+        "despawnOffX": 140
+      }
+    },
+    {
+      "id": "chidai",
+      "name_ja": "チダイ",
+      "rank": 28,
+      "sprite": "assets/fishes/chidai.png",
+      "movement": {
+        "pattern": "sine",
+        "speed": 60,
+        "amplitude": 8,
+        "frequency": 0.6,
+        "sizeScale": 1.0,
+        "sampleSeekBait": true,
+        "seekIntervalMs": 500,
+        "seekSpeed": 160
+      }
+    },
+    {
+      "id": "isaki",
+      "name_ja": "イサキ",
+      "rank": 29,
+      "sprite": "assets/fishes/isaki.png",
+      "movement": {
+        "pattern": "sine",
+        "speed": 65,
+        "amplitude": 8,
+        "frequency": 0.6,
+        "sizeScale": 1.0
+      }
+    },
+    {
+      "id": "ishidai",
+      "name_ja": "イシダイ",
+      "rank": 30,
+      "sprite": "assets/fishes/ishidai.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 55,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.1
+      }
+    },
+    {
+      "id": "mebaru",
+      "name_ja": "メバル",
+      "rank": 31,
+      "sprite": "assets/fishes/mebaru.png",
+      "movement": {
+        "pattern": "sine",
+        "speed": 50,
+        "amplitude": 10,
+        "frequency": 0.6,
+        "sizeScale": 0.9
+      }
+    },
+    {
+      "id": "shimasoi",
+      "name_ja": "シマソイ",
+      "rank": 32,
+      "sprite": "assets/fishes/shimasoi.png",
+      "movement": {
+        "pattern": "sine",
+        "speed": 48,
+        "amplitude": 10,
+        "frequency": 0.6,
+        "sizeScale": 1.0
+      }
+    },
+    {
+      "id": "kue",
+      "name_ja": "クエ",
+      "rank": 33,
+      "sprite": "assets/fishes/kue.png",
+      "movement": {
+        "circleEnabled": true,
+        "circleRadius": 150,
+        "circleOmega": 1.0,
+        "pattern": "straight",
+        "speed": 45,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.2
+      }
+    },
+    {
+      "id": "shirowani",
+      "name_ja": "シロワニ",
+      "rank": 34,
+      "specialRank": "f50",
+      "sprite": "assets/fishes/shirowani.png",
+      "spawnChance": 0.01,
+      "movement": {
+        "pattern": "straight",
+        "speed": 70,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.4,
+        "eatFishOnContact": true,
+        "eatRange": 60,
+        "seekSecondNearestFish": true,
+        "seekOtherSpeed": 90,
+        "seekAttachRadiusPx": 0
+      }
+    },
+    {
+      "id": "kegani",
+      "name_ja": "ケガニ",
+      "rank": 35,
+      "sprite": "assets/fishes/kegani.png",
+      "movement": {
+        "pattern": "drift",
+        "speed": 18,
+        "amplitude": 8,
+        "frequency": 0.3,
+        "sizeScale": 1.0,
+        "cutRopeOnTouch": true
+      }
+    },
+    {
+      "id": "shimagatsuo",
+      "name_ja": "シマガツオ",
+      "rank": 36,
+      "sprite": "assets/fishes/shimagatsuo.png",
+      "movement": {
+        "pattern": "sine",
+        "speed": 65,
+        "amplitude": 10,
+        "frequency": 0.6,
+        "sizeScale": 1.1
+      }
+    },
+    {
+      "id": "atorantikkusaamon",
+      "name_ja": "アトランティックサーモン",
+      "rank": 37,
+      "sprite": "assets/fishes/atoranteikkusaamon.png",
+      "spawnChance": 0,
+      "movement": {
+        "pattern": "sine",
+        "speed": 75,
+        "amplitude": 10,
+        "frequency": 0.6,
+        "sizeScale": 1.2
+      }
+    },
+    {
+      "id": "kingusaamon",
+      "name_ja": "キングサーモン",
+      "rank": 38,
+      "sprite": "assets/fishes/kingusaamon.png",
+      "movement": {
+        "spawnChild": "atorantikkusaamon",
+        "spawnInterval": 1.5,
+        "pattern": "sine",
+        "speed": 78,
+        "amplitude": 10,
+        "frequency": 0.6,
+        "sizeScale": 1.25
+      }
+    },
+    {
+      "id": "nishin",
+      "name_ja": "ニシン",
+      "rank": 39,
+      "sprite": "assets/fishes/nishin.png",
+      "movement": {
+        "pattern": "sine",
+        "speed": 75,
+        "amplitude": 8,
+        "frequency": 0.7,
+        "sizeScale": 0.9
+      }
+    },
+    {
+      "id": "tobiuo",
+      "name_ja": "トビウオ",
+      "rank": 40,
+      "sprite": "assets/fishes/tobiuo.png",
+      "movement": {
+        "pattern": "sine",
+        "speed": 85,
+        "amplitude": 14,
+        "frequency": 0.8,
+        "sizeScale": 0.95
+      }
+    },
+    {
+      "id": "kohada",
+      "name_ja": "コハダ",
+      "rank": 41,
+      "sprite": "assets/fishes/kohada.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 60,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 0.5,
+        "growToScale": 1.2,
+        "growDurationMs": 4000,
+        "patrolX": true,
+        "patrolSpeed": 30
+      }
+    },
+    {
+      "id": "kamasu",
+      "name_ja": "カマス",
+      "rank": 42,
+      "sprite": "assets/fishes/kamasu.png",
+      "movement": {
+        "pattern": "rise",
+        "speed": 70,
+        "amplitude": 8,
+        "frequency": 0.7,
+        "sizeScale": 0.9,
+        "patrolX": true,
+        "patrolSpeed": 90
+      }
+    },
+    {
+      "id": "buri",
+      "name_ja": "ブリ",
+      "rank": 43,
+      "sprite": "assets/fishes/buri.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 88,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.3
+      }
+    },
+    {
+      "id": "katsuo",
+      "name_ja": "カツオ",
+      "rank": 44,
+      "sprite": "assets/fishes/katsuo.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 140,
+        "amplitude": 6,
+        "frequency": 0.4,
+        "sizeScale": 1.5,
+        "patrolX": true,
+        "patrolSpeed": 140
+      }
+    },
+    {
+      "id": "soudagatsuo",
+      "name_ja": "ソウダガツオ",
+      "rank": 45,
+      "sprite": "assets/fishes/soudagatsuo.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 120,
+        "amplitude": 6,
+        "frequency": 0.4,
+        "sizeScale": 1.3,
+        "patrolX": true,
+        "patrolSpeed": 130
+      }
+    },
+    {
+      "id": "shako",
+      "name_ja": "シャコ",
+      "rank": 46,
+      "sprite": "assets/fishes/shako.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 20,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 0.9,
+        "dartEnabled": true,
+        "dartSpeed": 320,
+        "dartDurationMs": 180,
+        "dartReturn": true,
+        "dartReturnFrac": 0.5,
+        "dartReturnMs": 140,
+        "dartIntervalMinMs": 320,
+        "dartIntervalMaxMs": 680
+      }
+    },
+    {
+      "id": "surumeika",
+      "name_ja": "スルメイカ",
+      "rank": 55,
+      "sprite": "assets/fishes/surumeika.png",
+      "movement": {
+        "pattern": "rise",
+        "speed": 140,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 0.9
+      }
+    },
+    {
+      "id": "mizudako",
+      "name_ja": "ミズダコ",
+      "rank": 48,
+      "sprite": "assets/fishes/mizudako.png",
+      "movement": {
+        "pattern": "zigzag",
+        "speed": 55,
+        "amplitude": 14,
+        "frequency": 0.8,
+        "sizeScale": 1.2,
+        "pulsate": true,
+        "pulsateAmp": 0.55,
+        "pulsateHz": 0.5
+      }
+    },
+    {
+      "id": "akasango",
+      "name_ja": "アカサンゴ",
+      "rank": 49,
+      "sprite": "assets/fishes/akasango.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 0,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.0
+      }
+    },
+    {
+      "id": "hotaruika",
+      "name_ja": "ホタルイカ",
+      "rank": 50,
+      "sprite": "assets/fishes/hotaruika.png",
+      "stealthRadius": 120,
+      "movement": {
+        "pattern": "rise",
+        "speed": 70,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 0.7
+      }
+    },
+    {
+      "id": "akagenge",
+      "name_ja": "アカゲンゲ",
+      "rank": 51,
+      "sprite": "assets/fishes/akagenge.png",
+      "movement": {
+        "pattern": "rise",
+        "speed": 50,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.0
+      }
+    },
+    {
+      "id": "akoudai",
+      "name_ja": "アコウダイ",
+      "rank": 52,
+      "sprite": "assets/fishes/akoudai.png",
+      "movement": {
+        "pattern": "sine",
+        "speed": 60,
+        "amplitude": 12,
+        "frequency": 0.5,
+        "sizeScale": 1.1,
+        "circleMove": true,
+        "circleRadius": 64,
+        "circleOmega": 1.4,
+        "ellipseXScale": 1.8,
+        "ellipseYScale": 0.6
+      }
+    },
+    {
+      "id": "abachan",
+      "name_ja": "アバチャン",
+      "rank": 53,
+      "sprite": "assets/fishes/abachan.png",
+      "movement": {
+        "pattern": "drift",
+        "speed": 16,
+        "amplitude": 10,
+        "frequency": 0.6,
+        "sizeScale": 0.8
+      }
+    },
+    {
+      "id": "inugochi",
+      "name_ja": "イヌゴチ",
+      "rank": 73,
+      "sprite": "assets/fishes/inugochi.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 30,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.0
+      }
+    },
+    {
+      "id": "uchiwafugu",
+      "name_ja": "ウチワフグ",
+      "rank": 57,
+      "sprite": "assets/fishes/uchiwafugu.png",
+      "movement": {
+        "pattern": "drift",
+        "speed": 35,
+        "amplitude": 10,
+        "frequency": 0.5,
+        "sizeScale": 1.0
+      }
+    },
+    {
+      "id": "ebodai",
+      "name_ja": "エボダイ",
+      "rank": 56,
+      "sprite": "assets/fishes/ebodai.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 52,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.0
+      }
+    },
+    {
+      "id": "ginzame",
+      "name_ja": "ギンザメ",
+      "rank": 70,
+      "sprite": "assets/fishes/ginzame.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 60,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.2
+      }
+    },
+    {
+      "id": "ginmedai",
+      "name_ja": "ギンメダイ",
+      "rank": 58,
+      "sprite": "assets/fishes/ginmedai.png",
+      "spawnChance": 0.35,
+      "movement": {
+        "pattern": "straight",
+        "speed": 62,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.1
+      }
+    },
+    {
+      "id": "kichiji",
+      "name_ja": "キチジ",
+      "rank": 59,
+      "sprite": "assets/fishes/kichiji.png",
+      "movement": {
+        "polyMove": true,
+        "polySides": 5,
+        "polyR": 80,
+        "polySpeed": 50,
+        "polyDriftX": 30,
+        "pattern": "straight",
+        "speed": 50,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.0
+      }
+    },
+    {
+      "id": "kintokidai",
+      "name_ja": "キントキダイ",
+      "rank": 60,
+      "sprite": "assets/fishes/kintokidai.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 58,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.0
+      }
+    },
+    {
+      "id": "samegarei",
+      "name_ja": "サメガレイ",
+      "rank": 61,
+      "sprite": "assets/fishes/samegarei.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 45,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.35,
+        "opacity": 0.4,
+        "chaseBaitInRange": true,
+        "chaseRangePx": 160,
+        "chaseSpeed": 240
+      }
+    },
+    {
+      "id": "sekitoriiwashi",
+      "name_ja": "セキトリイワシ",
+      "rank": 62,
+      "sprite": "assets/fishes/sekitoriiwashi.png",
+      "movement": {
+        "pattern": "sine",
+        "speed": 70,
+        "amplitude": 8,
+        "frequency": 0.7,
+        "sizeScale": 0.9
+      }
+    },
+    {
+      "id": "shachiburi",
+      "name_ja": "シャチブリ",
+      "rank": 63,
+      "sprite": "assets/fishes/shachiburi.png",
+      "movement": {
+        "pattern": "zigzag",
+        "speed": 75,
+        "amplitude": 20,
+        "frequency": 1.2,
+        "sizeScale": 1.2
+      }
+    },
+    {
+      "id": "nokogirizame",
+      "name_ja": "ノコギリザメ",
+      "rank": 64,
+      "sprite": "assets/fishes/nokogirizame.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 70,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.3
+      }
+    },
+    {
+      "id": "nodoguro",
+      "name_ja": "ノドグロ",
+      "rank": 65,
+      "sprite": "assets/fishes/nodoguro.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 60,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.0
+      }
+    },
+    {
+      "id": "hoshieso",
+      "name_ja": "ホシエソ",
+      "rank": 66,
+      "sprite": "assets/fishes/hoshieso.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 62,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.0
+      }
+    },
+    {
+      "id": "bouzuginpo",
+      "name_ja": "ボウズギンポ",
+      "rank": 67,
+      "sprite": "assets/fishes/bouzuginpo.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 54,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.0
+      }
+    },
+    {
+      "id": "madara",
+      "name_ja": "マダラ",
+      "rank": 68,
+      "sprite": "assets/fishes/madara.png",
+      "movement": {
+        "pattern": "rise",
+        "speed": 50,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.8,
+        "patrolSpeed": 40,
+        "patrolAmplitude": 80,
+        "patrolFrequency": 1.5
+      }
+    },
+    {
+      "id": "mahokke",
+      "name_ja": "マホッケ",
+      "rank": 69,
+      "sprite": "assets/fishes/mahokke.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 58,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.1
+      }
+    },
+    {
+      "id": "yunohanagani",
+      "name_ja": "ユノハナガニ",
+      "rank": 47,
+      "sprite": "assets/fishes/yunohanagani.png",
+      "movement": {
+        "pattern": "rise",
+        "speed": 65,
+        "amplitude": 8,
+        "frequency": 0.4,
+        "sizeScale": 0.9
+      }
+    },
+    {
+      "id": "okikihoubou",
+      "name_ja": "オキキホウボウ",
+      "rank": 71,
+      "sprite": "assets/fishes/okikihoubou.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 64,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.0
+      }
+    },
+    {
+      "id": "sake",
+      "name_ja": "サケ",
+      "rank": 22,
+      "sprite": "assets/fishes/sake.png",
+      "movement": {
+        "pattern": "sine",
+        "speed": 72,
+        "amplitude": 8,
+        "frequency": 0.6,
+        "sizeScale": 1.1
+      }
+    },
+    {
+      "id": "akagutsu",
+      "name_ja": "アカグツ",
+      "rank": 54,
+      "sprite": "assets/fishes/akagutsu.png",
+      "movement": {
+        "pattern": "drift",
+        "speed": 16,
+        "amplitude": 12,
+        "frequency": 0.5,
+        "sizeScale": 0.9
+      }
+    },
+    {
+      "id": "kujirauo",
+      "name_ja": "クジラウオ",
+      "rank": 74,
+      "sprite": "assets/fishes/kujirauo.png",
+      "spawnChance": 0.01,
+      "movement": {
+        "pattern": "static",
+        "speed": 0,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.2,
+        "seekSecondNearestFish": true,
+        "eatFishOnContact": true,
+        "eatRange": 60
+      }
+    },
+    {
+      "id": "kinmedai",
+      "name_ja": "キンメダイ",
+      "rank": 75,
+      "sprite": "assets/fishes/kinmedai.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 60,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.1
+      }
+    },
+    {
+      "id": "konnyakukajika",
+      "name_ja": "コンニャクカジカ",
+      "rank": 76,
+      "sprite": "assets/fishes/konnyakukajika.png",
+      "movement": {
+        "pattern": "drift",
+        "speed": 14,
+        "amplitude": 14,
+        "frequency": 0.5,
+        "sizeScale": 1.0
+      }
+    },
+    {
+      "id": "chouchinankou",
+      "name_ja": "チョウチンアンコウ",
+      "rank": 77,
+      "sprite": "assets/fishes/chouchinankou.png",
+      "movement": {
+        "pattern": "drift",
+        "speed": 12,
+        "amplitude": 18,
+        "frequency": 0.4,
+        "sizeScale": 1.2
+      }
+    },
+    {
+      "id": "hoteieso",
+      "name_ja": "ホテイエソ",
+      "rank": 78,
+      "sprite": "assets/fishes/hoteieso.png",
+      "movement": {
+        "pattern": "straight",
+        "sizeScale": 1.1
+      }
+    },
+    {
+      "id": "ryugunotsukai",
+      "name_ja": "リュウグウノツカイ",
+      "rank": 79,
+      "sprite": "assets/fishes/ryugunotsukai.png",
+      "movement": {
+        "pattern": "sine",
+        "speed": 60,
+        "amplitude": 12,
+        "frequency": 0.5,
+        "sizeScale": 1.5,
+        "fixedRotation": 90,
+        "fixedScaleX": 0.8,
+        "fixedScaleY": 7.0,
+        "hitboxAspect": 0.2,
+        "hitboxHeightMaxRatio": 0.8
+      }
+    },
+    {
+      "id": "demenigisu",
+      "name_ja": "デメニギス",
+      "rank": 80,
+      "sprite": "assets/fishes/demenigisu.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 20,
+        "circleMove": true,
+        "circleRadius": 60,
+        "circleOmega": 8,
+        "sizeScale": 1.0
+      }
+    },
+    {
+      "id": "urikurage",
+      "name_ja": "ウリクラゲ",
+      "rank": 81,
+      "sprite": "assets/fishes/urikurage.png",
+      "movement": {
+        "pattern": "drift",
+        "speed": 10,
+        "amplitude": 15,
+        "frequency": 0.3,
+        "sizeScale": 0.9,
+        "opacity": 0.6,
+        "blinkOpacity": true,
+        "blinkOpacityAmp": 0.4,
+        "blinkOpacityHz": 2.5
+      }
+    },
+    {
+      "id": "urokomushi",
+      "name_ja": "ウロコムシ",
+      "rank": 82,
+      "sprite": "assets/fishes/urokomushi.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 35,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 0.8
+      },
+      "spawnChance": 0.6
+    },
+    {
+      "id": "eboshinamako",
+      "name_ja": "エボシナマコ",
+      "rank": 83,
+      "sprite": "assets/fishes/eboshinamako.png",
+      "movement": {
+        "pattern": "drift",
+        "speed": 8,
+        "amplitude": 6,
+        "frequency": 0.2,
+        "sizeScale": 0.9
+      }
+    },
+    {
+      "id": "mitsukurizame",
+      "name_ja": "ミツクリザメ",
+      "rank": 84,
+      "sprite": "assets/fishes/mitsukurizame.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 72,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.3
+      }
+    },
+    {
+      "id": "rabuka",
+      "name_ja": "ラブカ",
+      "rank": 85,
+      "sprite": "assets/fishes/rabuka.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 58,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.2
+      },
+      "spawnChance": 0.6
+    },
+    {
+      "id": "jinbeezame",
+      "name_ja": "ジンベエザメ",
+      "rank": 86,
+      "specialRank": "f50",
+      "sprite": "assets/fishes/jinbeezame.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 25,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 3.6
+      },
+      "spawnChance": 0.7
+    },
+    {
+      "id": "hohojirozame",
+      "name_ja": "ホホジロザメ",
+      "rank": 87,
+      "sprite": "assets/fishes/hohojirozame.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 80,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.6
+      }
+    },
+    {
+      "id": "hanmaaheddoshaaku",
+      "name_ja": "ハンマーヘッドシャーク",
+      "rank": 88,
+      "sprite": "assets/fishes/hanmaaheddoshaaku.png",
+      "movement": {
+        "pattern": "sine",
+        "speed": 78,
+        "amplitude": 14,
+        "frequency": 0.6,
+        "sizeScale": 1.6,
+        "rushToBaitX": true,
+        "rushHoming": false,
+        "rushSpeed": 280,
+        "rushDurationMs": 0,
+        "rushUntilOffscreen": true
+      }
+    },
+    {
+      "id": "daiougusokumushi",
+      "name_ja": "ダイオウグソクムシ",
+      "rank": 89,
+      "sprite": "assets/fishes/daiougusokumushi.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 40,
+        "waveX": true,
+        "waveXAmplitude": 4,
+        "waveXFrequencyHz": 12,
+        "allowOffscreenX": true,
+        "sizeScale": 1.3
+      }
+    },
+    {
+      "id": "hanmaaheddoshaaku_2",
+      "name_ja": "ハンマーヘッドシャーク",
+      "rank": 89,
+      "sprite": "assets/fishes/hanmaaheddoshaaku.png",
+      "movement": {
+        "pattern": "sine",
+        "speed": 78,
+        "amplitude": 14,
+        "frequency": 0.6,
+        "sizeScale": 1.6,
+        "rushToBaitX": true,
+        "rushHoming": false,
+        "rushSpeed": 280,
+        "rushDurationMs": 0,
+        "rushUntilOffscreen": true
+      }
+    },
+    {
+      "id": "osagame",
+      "name_ja": "オサガメ",
+      "rank": 90,
+      "specialRank": "f30",
+      "sprite": "assets/fishes/osagame.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 50,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.7,
+        "avoidFromBaitX": true,
+        "avoidSpeed": 140,
+        "avoidDurationMs": 1600,
+        "avoidRangePx": 120
+      }
+    },
+    {
+      "id": "mendako",
+      "name_ja": "メンダコ",
+      "rank": 90,
+      "sprite": "assets/fishes/mendako.png",
+      "movement": {
+        "pattern": "drift",
+        "speed": 10,
+        "amplitude": 12,
+        "frequency": 0.4,
+        "sizeScale": 1.0,
+        "rotationSpeed": 60,
+        "scaleOscillation": true,
+        "scaleMin": 0.1,
+        "scaleMax": 10.0,
+        "scaleFrequencyHz": 0.5
+      }
+    },
+    {
+      "id": "daiouika",
+      "name_ja": "ダイオウイカ",
+      "rank": 91,
+      "sprite": "assets/fishes/daiouika.png",
+      "movement": {
+        "pattern": "drift",
+        "speed": 100,
+        "amplitude": 16,
+        "frequency": 0.8,
+        "sizeScale": 2.5,
+        "wanderEnabled": true,
+        "wanderSpeed": 140,
+        "wanderInterval": 2.5,
+        "allowOffscreenX": true,
+        "despawnOffX": 600,
+        "chaseBaitInRange": true,
+        "chaseRangePx": 400,
+        "chaseSpeed": 180
+      }
+    },
+    {
+      "id": "oumugai",
+      "name_ja": "オウムガイ",
+      "rank": 92,
+      "sprite": "assets/fishes/oumugai.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 25,
+        "amplitude": 14,
+        "frequency": 0.4,
+        "sizeScale": 1.1,
+        "blinkTeleport": true,
+        "blinkCount": 3,
+        "blinkIntervalMs": 180,
+        "blinkCooldownMs": 1600,
+        "circleMove": true,
+        "circleRadius": 40,
+        "circleOmega": 2.0
+      }
+    },
+    {
+      "id": "hagoromokonnyakuuo",
+      "name_ja": "ハゴロモコンニャクウオ",
+      "rank": 93,
+      "sprite": "assets/fishes/hagoromokonnyakuuo.png",
+      "movement": {
+        "pattern": "drift",
+        "speed": 14,
+        "amplitude": 14,
+        "frequency": 0.5,
+        "sizeScale": 1.0
+      }
+    },
+    {
+      "id": "hinobikurage",
+      "name_ja": "ヒノオビクラゲ",
+      "rank": 94,
+      "sprite": "assets/fishes/hinobikurage.png",
+      "spawnChance": 0.8,
+      "movement": {
+        "pattern": "sine",
+        "spawnColumn": true,
+        "columnCount": 8,
+        "columnSpacing": 35,
+        "speed": 28,
+        "amplitude": 24,
+        "frequency": 0.5,
+        "sizeScale": 1.0
+      }
+    },
+    {
+      "id": "makafushigiuo",
+      "name_ja": "マカフシギウオ",
+      "rank": 95,
+      "sprite": "assets/fishes/makafushigiuo.png",
+      "movement": {
+        "pattern": "drift",
+        "speed": 16,
+        "amplitude": 16,
+        "frequency": 0.5,
+        "sizeScale": 1.0
+      }
+    },
+    {
+      "id": "yokozunaiwashi",
+      "name_ja": "ヨコヅナイワシ",
+      "rank": 96,
+      "sprite": "assets/fishes/yokozunaiwashi.png",
+      "movement": {
+        "pattern": "sine",
+        "speed": 85,
+        "amplitude": 12,
+        "frequency": 0.6,
+        "sizeScale": 1.4
+      }
+    },
+    {
+      "id": "shiirakansu",
+      "name_ja": "シーラカンス",
+      "rank": 97,
+      "specialRank": "f100",
+      "sprite": "assets/fishes/si-rakansu.png",
+      "movement": {
+        "pattern": "sine",
+        "speed": 45,
+        "amplitude": 12,
+        "frequency": 0.4,
+        "sizeScale": 1.6
+      }
+    },
+    {
+      "id": "shironagasukujira",
+      "name_ja": "シロナガスクジラ",
+      "rank": 98,
+      "specialRank": "f70",
+      "sprite": "assets/fishes/shironagasukujira.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 70,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 33.0
+      }
+    },
+    {
+      "id": "makkoukujira",
+      "name_ja": "マッコウクジラ",
+      "rank": 99,
+      "sprite": "assets/fishes/makkoukujira.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 68,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 3.0,
+        "chaseBaitInRange": true,
+        "chaseRangePx": 500,
+        "chaseSpeed": 400
+      }
+    },
+    {
+      "id": "urokofunetamagai",
+      "name_ja": "ウロコフネタマガイ",
+      "rank": 104,
+      "sprite": "assets/fishes/urokofunetamagai.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 35,
+        "amplitude": 12,
+        "frequency": 0.4,
+        "sizeScale": 1.0,
+        "allowOffscreenX": true,
+        "despawnOffX": 200
+      }
+    },
+    {
+      "id": "kairoudouketsu",
+      "name_ja": "カイロウドウケツ",
+      "rank": 101,
+      "sprite": "assets/fishes/kairoudouketsu.png",
+      "movement": {
+        "pattern": "drift",
+        "speed": 10,
+        "amplitude": 12,
+        "frequency": 0.4,
+        "sizeScale": 1.5
+      }
+    },
+    {
+      "id": "goemonkoshioriebi",
+      "name_ja": "ゴエモンコシオリエビ",
+      "rank": 102,
+      "sprite": "assets/fishes/goemonkoshioriebi.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 20,
+        "amplitude": 10,
+        "frequency": 0.4,
+        "sizeScale": 0.9,
+        "dartEnabled": true,
+        "dartSpeed": 450,
+        "dartDurationMs": 220,
+        "dartReturn": true
+      }
+    },
+    {
+      "id": "ooguchiboya",
+      "name_ja": "オオグチボヤ",
+      "rank": 103,
+      "sprite": "assets/fishes/ooguchiboya.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 5,
+        "sizeScale": 1.2,
+        "dartEnabled": true,
+        "dartSpeed": 400,
+        "dartDurationMs": 200,
+        "dartReturn": false,
+        "dartIntervalMinMs": 1500,
+        "dartIntervalMaxMs": 3500
+      }
+    },
+    {
+      "id": "douketsuebi",
+      "name_ja": "ドウケツエビ",
+      "rank": 100,
+      "sprite": "assets/fishes/douketsuebi.png",
+      "movement": {
+        "pattern": "drift",
+        "speed": 16,
+        "amplitude": 12,
+        "frequency": 0.4,
+        "sizeScale": 0.9
+      }
+    },
+    {
+      "id": "marianasuneirufisshu",
+      "name_ja": "マリアナスネイルフィッシュ",
+      "rank": 105,
+      "sprite": "assets/fishes/marianasuneirufisshu.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 42,
+        "amplitude": 0,
+        "frequency": 0,
+        "sizeScale": 1.0
+      }
+    },
+    {
+      "id": "megarodon",
+      "name_ja": "メガロドン",
+      "rank": 997,
+      "sprite": "assets/fishes/megarodon.png",
+      "movement": {
+        "pattern": "straight",
+        "speed": 100,
+        "sizeScale": 3.0
+      }
+    },
+    {
+      "id": "fujisan",
+      "name_ja": "富士山",
+      "rank": 998,
+      "sprite": "assets/fishes/fujisan.png",
+      "movement": {
+        "pattern": "drift",
+        "speed": 0,
+        "sizeScale": 4.0
+      }
+    },
+    {
+      "id": "igyounokami",
+      "name_ja": "異形の神",
+      "rank": 999,
+      "sprite": "assets/fishes/igyounokami.png",
+      "movement": {
+        "pattern": "drift",
+        "speed": 5,
+        "sizeScale": 3.0
+      }
+    },
+    {
+      "id": "kura-ken",
+      "name_ja": "クラーケン",
+      "rank": 888,
+      "sprite": "assets/fishes/kura-ken.png",
+      "movement": {
+        "pattern": "drift",
+        "speed": 0,
+        "sizeScale": 3.0
+      }
+    }
+  ],
+  "movementPresets": {
+    "straight": {
+      "desc": "一定速度で直進"
+    },
+    "sine": {
+      "desc": "サイン波で蛇行"
+    },
+    "zigzag": {
+      "desc": "ジグザグ移動"
+    },
+    "drift": {
+      "desc": "ゆらゆら漂う"
+    },
+    "patrol": {
+      "desc": "横移動＆端で反転"
+    }
+  }
+}
