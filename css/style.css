@@ -284,6 +284,18 @@ a {
     margin-top: 0.2rem;
 }
 
+.btn-primary.product-btn {
+    background: rgba(255, 215, 0, 0.1);
+    border-color: #ffd700;
+    color: #ffd700;
+}
+
+.btn-primary.product-btn:hover {
+    background: #ffd700;
+    color: #000;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+}
+
 /* Scroll Indicator */
 .scroll-indicator {
     position: absolute;
